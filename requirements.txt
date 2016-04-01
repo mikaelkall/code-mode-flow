@@ -1,0 +1,5 @@
+PyChromecast>=0.5.1
+requests>=2.0
+protobuf==3.0.0b2
+zeroconf>=0.17.4
+six>=1.10.0
