@@ -1,25 +1,32 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-__author__ = 'kall.micke@gmail.com'
-
 import pychromecast
 import webbrowser
 import requests
+from wakeonlan import wol
+
+_author__ = 'kall.micke@gmail.com'
 
 '''
  Youtube link to play.
 '''
-YOUTUBE_URL = 'http://www.youtube.com/watch?v=oT3mCybbhf0'
+YOUTUBE_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+'''
+Mac address for wake on lan.
+'''
+MACADDR = 'f4:b7:e2:0d:d4:c0'
 
 
 class Flow:
 
     global YOUTUBE_URL
+    global MACADDR
 
     def __init__(self):
 
         self.youtube_url = YOUTUBE_URL
         self.youtube_id = YOUTUBE_URL.split('?')[1]
+        self.macaddr = MACADDR
 
     def stream_youtube(self):
 
@@ -42,6 +49,13 @@ class Flow:
         controller = webbrowser.get()
         controller.open(self.youtube_url)
 
+    def start_computer(self):
+        '''
+         Starts computer that it's turned off.
+        '''
+        self.__puts('success', "Sends wakeon lan packet [%s]" % (self.macaddr))
+        wol.send_magic_packet(self.macaddr)
+
     def __puts(self, tp, msg):
         '''
          Outputs messages in fancy colors.
@@ -61,3 +75,4 @@ if __name__ == '__main__':
     flow = Flow()
     flow.stream_youtube()
     flow.browse_youtube()
+    flow.start_computer()
