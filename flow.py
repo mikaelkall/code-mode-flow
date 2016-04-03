@@ -5,7 +5,8 @@ import webbrowser
 import requests
 from wakeonlan import wol
 
-_author__ = 'kall.micke@gmail.com'
+__author__ = 'Mikael Kall'
+__email__ = 'kall.micke@gmail.com'
 
 '''
  Youtube link to play.
