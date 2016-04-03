@@ -12,6 +12,13 @@ Script will wake up my stationary pc (Wake-on-LAN) from my laptop.
 Stream Youtube video to all connected chromecasts devices in the network and 
 browse same youtube video on my laptop.  
 
+### Compliance 
+
+Follows pep257 and pep8 style recommendations.
+
+    nighter@devbox:~/dev/code-mode-flow (master)$ pep257 ./flow.py && pep8 ./flow.py
+    nighter@devbox:~/dev/code-mode-flow (master)$ 
+
 ## Usage
 
     ./flow.py
