@@ -1,17 +1,33 @@
 # flow.py
 
-Written for a programming contest regarding flow.
+## Description
+
+This script is written for Code.Mode contest.
+
+[ http://www.sweclockers.com/artikel/21924-skripta-med-nackademin-och-vinn-presentkort-pa-webhallen ]
+
+## Summary
+
+Script will wake up my stationary pc (Wake-on-LAN) from my laptop. 
+Stream Youtube video to all connected chromecasts devices in the network and 
+browse same youtube video on my laptop.  
 
 ## Usage
 
-N/A
-
-### If scripts are opening in a text editor
-
-N/A
+    ./flow.py
 
 ### Installation
 
-To install dependencies.
+Install dependencies.
 
-1. pip install -r requirements.txt
+[Mac] 
+
+1. sudo easy_install pip
+2. sudo pip install -r requirements.txt
+3. sudo easy_install -U six
+
+[Ubuntu] 
+
+1. sudo apt-get install python-pip
+2. sudo pip install --upgrade pip
+3. sudo pip install -r requirements.txt
