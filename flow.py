@@ -9,6 +9,7 @@ and sends a wake on lan packet to a computer that is turned off.
 import pychromecast
 import webbrowser
 import requests
+import os
 from wakeonlan import wol
 
 __author__ = 'Mikael Kall'
@@ -48,6 +49,12 @@ class Flow:
         controller = webbrowser.get()
         controller.open(self.youtube_url)
 
+    def stream_terminal(self):
+        """Stream on terminal."""
+        command = 'curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+        self.__puts('success', 'Stream to terminal')
+        os.system(command)
+
     def start_computer(self):
         """Start computer that it's turned off."""
         self.__puts('success', "Sends wakeon lan packet [%s]" % (self.macaddr))
@@ -71,3 +78,4 @@ if __name__ == '__main__':
     flow.stream_youtube()
     flow.browse_youtube()
     flow.start_computer()
+    flow.stream_terminal()
