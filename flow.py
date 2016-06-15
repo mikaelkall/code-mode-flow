@@ -10,6 +10,7 @@ import pychromecast
 import webbrowser
 import requests
 import os
+import time
 from wakeonlan import wol
 
 __author__ = 'Mikael Kall'
@@ -22,6 +23,7 @@ MACADDR = 'f4:b7:e2:0d:d4:c0'
 
 
 class Flow:
+
     """All flow definitions."""
 
     global YOUTUBE_URL
@@ -53,6 +55,7 @@ class Flow:
         """Stream on terminal."""
         command = 'curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
         self.__puts('success', 'Stream to terminal')
+        time.sleep(3)
         os.system(command)
 
     def start_computer(self):
